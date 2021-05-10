@@ -4,22 +4,29 @@
     <meta charset="utf-8" />
     <title></title>
     <link rel="stylesheet" href="EmployeeStyleSheet.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="EmployeeScript.js"></script>
+    <script>
+
+    </script>
 </head>
 <body>
     <div class="topnav">
-        <a onclick="">Home</a>
-        <a onclick="">News</a>
-        <a onclick="">Contact</a>
-        <a onclick="">About</a>
+        <a class="active" onclick="activeLogin()">Home</a>
+        <a onclick="activeRegister()">Register</a>
+        <a onclick="activeUpdate()">Update</a>
+        <a onclick="">Employees List</a>
     </div>
-    <div class="center">
+    <div class="center" id="LoginDiv">
+        <label style="font-family:'High Tower Text'; color:chocolate">Login</label><br /><br />
         <label>Employee ID</label><br />
         <input type="text" id="loginEmpID" name="loginEmpID" /><br /><br />
         <label>Mobile</label><br />
-        <input type="text" id="LoginMobile" name="LoginMobile"/><br /><br />
-        <input type="submit" />
+        <input type="text" id="LoginMobile" name="LoginMobile" /><br /><br />
+        <input type="button" value="Submit" />
     </div>
-    <div class="center">
+    <div class="center" id="RegisterDiv" style="display:none">
+        <label style="font-family:'High Tower Text'; color:chocolate">Register</label><br /><br />
         <label>Employee ID</label><br />
         <input type="text" id="RegisterEmpID" name="RegisterEmpID" /><br /><br />
         <label>First Name</label><br />
@@ -32,7 +39,23 @@
         <input type="text" id="email" name="email" /><br /><br />
         <label>City</label><br />
         <input type="text" id="city" name="city" /><br /><br />
-        <input type="submit" />
+        <input type="button" value="Submit" />
+    </div>
+    <div class="center" id="UpdateDiv" style="display:none">
+        <label style="font-family: 'High Tower Text';color: chocolate">Update</label><br /><br />
+        <label>Employee ID</label><br />
+        <input type="text" id="updateEmpID" name="updateEmpID" /><br /><br />
+        <label>First Name</label><br />
+        <input type="text" id="updateFirstName" name="updateFirstName" /><br /><br />
+        <label>Last Name</label><br />
+        <input type="text" id="updateLastName" name="updateLastName" /><br /><br />
+        <label>Mobile</label><br />
+        <input type="text" id="updateMobile" name="updateMobile" /><br /><br />
+        <label>Email</label><br />
+        <input type="text" id="updateEmail" name="updateEmail" /><br /><br />
+        <label>City</label><br />
+        <input type="text" id="updateCity" name="updateCity" /><br /><br />
+        <input type="button" value="Submit" />
     </div>
 </body>
 </html>
