@@ -47,7 +47,7 @@ namespace EmployeeManagement
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
-
+            app.UseDefaultFiles();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
@@ -56,7 +56,7 @@ namespace EmployeeManagement
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Employee}/{action=Index}/{id?}");
             });
         }
     }
