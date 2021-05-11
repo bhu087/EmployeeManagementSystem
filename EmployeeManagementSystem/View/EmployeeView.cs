@@ -14,5 +14,13 @@ namespace EmployeeManagement.View
         {
             return employee.Login(employeeModel);
         }
+        public bool Register(EmployeeModel employeeModel)
+        {
+            return employee.Register(employeeModel);
+        }
+        public bool Update(EmployeeModel employeeModel)
+        {
+            return employee.Update(employeeModel);
+        }
     }
 }

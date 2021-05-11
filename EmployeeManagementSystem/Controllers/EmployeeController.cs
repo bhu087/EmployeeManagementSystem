@@ -11,7 +11,10 @@ namespace EmployeeManagement.Controllers
     public class EmployeeController : Controller
     {
         private IEmployeeView employeeView= new EmployeeView();
-        public ActionResult Login(int employeeId, long mobile)
+
+        [HttpPost]
+        [Route("api/login")]
+        public ActionResult Login(int employeeId, string mobile)
         {
             EmployeeModel employee = new EmployeeModel();
             employee.EmployeeID = employeeId;
@@ -29,6 +32,45 @@ namespace EmployeeManagement.Controllers
             {
                 return this.BadRequest(false);
             }
+        }
+        [HttpPost]
+        [Route("api/register")]
+        public ActionResult Register(int id, string firstName, string lastName, string mobile, string email, string city)
+        {
+            EmployeeModel employee = new EmployeeModel { 
+                EmployeeID = id,
+                FirstName = firstName,
+                LastName = lastName,
+                Mobile = mobile,
+                Email = email,
+                City = city
+            };
+            bool responce = employeeView.Register(employee);
+            if (responce)
+            {
+                return this.Ok("Registered Successfully");
+            }
+            return this.BadRequest("Not registered");
+        }
+        [HttpPut]
+        [Route("api/update")]
+        public ActionResult Update(int id, string mobile, string email, string city)
+        {
+            EmployeeModel employee = new EmployeeModel
+            {
+                EmployeeID = id,
+                FirstName = "Dhanya",
+                LastName = "Bhushan",
+                Mobile = mobile,
+                Email = email,
+                City = city
+            };
+            bool responce = employeeView.Update(employee);
+            if (responce)
+            {
+                return this.Ok("Registered Successfully");
+            }
+            return this.BadRequest("Not registered");
         }
     }
 }

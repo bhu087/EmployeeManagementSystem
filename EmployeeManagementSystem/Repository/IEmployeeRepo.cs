@@ -9,5 +9,7 @@ namespace EmployeeManagement.Repository
     interface IEmployeeRepo
     {
         bool Login(EmployeeModel employeeModel);
+        bool Register(EmployeeModel employeeModel);
+        bool Update(EmployeeModel employeeModel);
     }
 }

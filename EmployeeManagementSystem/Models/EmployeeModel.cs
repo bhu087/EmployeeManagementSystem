@@ -7,14 +7,14 @@ namespace EmployeeManagement.Models
         private int employeeID;
         private string firstName;
         private string lastName;
-        private long mobile;
+        private string mobile;
         private string email;
         private string city;
 
         public int EmployeeID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public long Mobile { get; set; }
+        public string Mobile { get; set; }
         public string Email { get; set; }
         public string City { get; set; }
     }

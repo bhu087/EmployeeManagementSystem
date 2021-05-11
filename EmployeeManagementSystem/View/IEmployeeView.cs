@@ -9,5 +9,7 @@ namespace EmployeeManagement.View
     public interface IEmployeeView
     {
         bool Login(EmployeeModel employeeModel);
+        bool Register(EmployeeModel employeeModel);
+        bool Update(EmployeeModel employeeModel);
     }
 }

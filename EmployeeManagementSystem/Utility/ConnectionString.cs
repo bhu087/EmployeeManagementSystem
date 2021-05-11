@@ -8,6 +8,6 @@ namespace EmployeeManagement.Utility
     public class ConnectionString
     {
         private static string connectionName = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=EmployeeDB;Integrated Security=True";
-        public static string ConnectionName { get; set; }
+        public static string ConnectionName { get => connectionName; set => ConnectionName = value; }
     }
 }
